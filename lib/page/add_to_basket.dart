@@ -215,6 +215,7 @@ class AddToBasket extends StatelessWidget {
                                                 basket.addItem(
                                                     int.parse(data.listData[index].id),
                                                     data.listData[index].price,
+                                                    index,
                                                     data.listData[index].title,
                                                     data.quantity,
                                                     data.listData[index].imageUrl,

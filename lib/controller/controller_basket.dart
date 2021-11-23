@@ -19,12 +19,13 @@ class BasketController extends GetxController{
     });
     return total;
   }
-  void addItem(int productId,int price,String title,int quantity,String imageUrl,String id,String color){
+  void addItem(int productId,int price,int index,String title,int quantity,String imageUrl,String id,String color){
     if(_items.containsKey(productId)){
       _items.update(productId, (value) => Basket(
           title: value.title,
           imageUrl: value.imageUrl,
           price: value.price,
+          index: value.index,
           quantity: quantity,
           id: value.id,
           color: value.color));
@@ -35,11 +36,24 @@ class BasketController extends GetxController{
           title: title,
           imageUrl: imageUrl,
           price: price,
+          index: index,
           quantity: quantity,
           id: id,
           color: color));
       update();
     }
+    update();
+  }
+  void removeitem(int productId){
+    cart--;
+    update();
+    _items.remove(productId);
+    update();
+  }
+
+  void clear(){
+    _items = {};
+    cart=0;
     update();
   }
 }
