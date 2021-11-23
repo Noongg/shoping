@@ -148,6 +148,7 @@ class HomePageOne extends GetView<Controller> {
               GetBuilder<Controller>(
                   init: Controller(),
                   builder: (data) => data.isLoading?Center(child: CircularProgressIndicator(),):Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           InkWell(
                             child: Stack(
@@ -228,7 +229,7 @@ class HomePageOne extends GetView<Controller> {
                             child: Stack(
                               children: [
                                 Container(
-                                  margin: EdgeInsets.only(top: 25, left: 20),
+                                  margin: EdgeInsets.only(top: 25, right: 20),
                                   padding:
                                   EdgeInsets.only(top: 15, right: 20, left: 20),
                                   height: 182,
@@ -291,7 +292,7 @@ class HomePageOne extends GetView<Controller> {
                                 ),
                                 Positioned(
                                     top: 35,
-                                    left: 140,
+                                    left: 120,
                                     child: Image.asset('assets/images/tim.png'))
                               ],
                             ),
